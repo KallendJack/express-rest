@@ -10,7 +10,7 @@ const app = express()
 app.use(bodyParser.json())
 
 // Connect to Mongoose
-mongoose.connect('mongodb://localhost/bookstore', {
+mongoose.connect('mongodb+srv://jack:1234@test-api-anyw0.mongodb.net/bookstore?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
