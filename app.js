@@ -19,7 +19,7 @@ mongoose.connect(`mongodb+srv://jack:1234@test-api-anyw0.mongodb.net/bookstore?r
 })
 
 app.get('/', function(req, res){
-    res.send('Testing...')
+    res.send('Go to /api/genres or /api/books')
 })
 
 app.get('/api/genres', function(req, res){
