@@ -6,6 +6,8 @@ require('dotenv').config()
 Genre = require('./models/genre')
 Book = require('./models/book')
 
+const port = process.env.PORT || 3000;
+
 const app = express()
 
 app.use(bodyParser.json())
@@ -109,5 +111,5 @@ app.delete('/api/books/:_id', function(req, res){
   })
 })
 
-app.listen(3000);
-console.log('Running on port 3000...')
+app.listen(port);
+console.log(`Running on port ${port}`)
