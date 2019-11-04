@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+require('dotenv').config()
 
 Genre = require('./models/genre')
 Book = require('./models/book')
@@ -10,11 +11,10 @@ const app = express()
 app.use(bodyParser.json())
 
 // Connect to Mongoose
-mongoose.connect('mongodb+srv://jack:1234@test-api-anyw0.mongodb.net/bookstore?retryWrites=true&w=majority', {
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@test-api-anyw0.mongodb.net/bookstore?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-const db = mongoose.connection
 
 app.get('/', function(req, res){
     res.send('Testing...')
