@@ -5,7 +5,7 @@ require('dotenv').config()
 
 Genre = require('./models/genre')
 Book = require('./models/book')
-
+console.log(process.env.DATABASE_URI)
 const port = process.env.PORT || 3000;
 
 const app = express()
@@ -13,7 +13,7 @@ const app = express()
 app.use(bodyParser.json())
 
 // Connect to Mongoose
-mongoose.connect(`mongodb+srv://jack:1234@test-api-anyw0.mongodb.net/bookstore?retryWrites=true&w=majority`, {
+mongoose.connect(process.env.DATABASE_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
