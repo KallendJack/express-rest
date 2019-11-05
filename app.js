@@ -5,7 +5,7 @@ require('dotenv').config()
 
 Genre = require('./models/genre')
 Book = require('./models/book')
-console.log(process.env.DATABASE_URI)
+
 const port = process.env.PORT || 3000;
 
 const app = express()
